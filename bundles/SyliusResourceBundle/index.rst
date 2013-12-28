@@ -28,4 +28,5 @@ Please note that this bundle **is not an admin generator**. It won't create form
    Updating resource <update_resource>
    Deleting resource <delete_resource>
    Defining custom action <custom_actions>
+   Collection form type <form_collection>
    summary
