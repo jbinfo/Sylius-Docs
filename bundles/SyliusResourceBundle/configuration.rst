@@ -1,61 +1,11 @@
-Configuring your bundle
-=======================
-
-Creating a XmlMappingDriver
----------------------------
-
-.. code-block:: php
-
-    class MyBundle extends AbstractResourceBundle
-    {
-        // You need to specify a prefix for your bundle
-        protected function getBundlePrefix()
-        {
-            return 'app_bundle_name';
-        }
-
-        // You need specify the namespace where are stored your models
-        protected function getModelNamespace()
-        {
-            return 'MyApp\MyBundle\Model';
-        }
-
-        // You can specify the path where are stored the doctrine mapping, by default this method will returns
-        // model. This path is relative to the Resources/config/doctrine/.
-        protected function getDoctrineMappingDirectory()
-        {
-            return 'model';
-        }
-    }
-
-
-Using the ResolveDoctrineTargetEntitiesPass
--------------------------------------------
-
-.. code-block:: php
-
-    class MyBundle extends AbstractResourceBundle
-    {
-        // You need to specify a prefix for your bundle
-        protected function getBundlePrefix()
-        {
-            return 'app_bundle_name';
-        }
-
-        // You need to specify the mapping between your intefaces and your models. Like the following example you can
-        // get the classname of your model in the container (See the following chapater for more informations).
-        protected function getModelInterfaces()
-        {
-            return array(
-                'MyApp\MyBundle\ModelInterface' => 'sylius.model.resource.class',
-            );
-        }
-    }
-
 Configuring your resources
 ==========================
 
-There are two ways to configure the resources used by this bundle. You can manage your configuration for all yours bundles (explained in Basic Configuration) or into yours bundles (explained in Advanced configuration).
+Now you need to configure your resources! It means that you will tell to this bundle what model, controller, repository, etc...
+is used for each configured resource. It exists two ways for doing that, we will call them *Bbasic configuration* and
+*Advanced configuration*. The first one is pretty easy because your just need to write configuration (in your config.yml, for example).
+The second one allows you to embed configuration into your bundles but you will need to write some lines of code.
+We will explain the both ways in the next chapters.
 
 Basic configuration
 -------------------
