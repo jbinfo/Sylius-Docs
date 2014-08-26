@@ -8,20 +8,19 @@ Configuration reference
 
     sylius_inventory:
         driver: ~ # The driver used for persistence layer.
-        engine: twig # Templating engine to use by default.
         backorders: true # Enable/disable backorders.
-        events: ~ # Array of events for InventoryChangeListener 
+        events: ~ # Array of events for InventoryChangeListener
+        track_inventory: true
+        checker: sylius.availability_checker.default # The availability checker service id.
+        operator: sylius_inventory.operator.default # The inventory operator service id.
         classes:
-            unit:
-                model: ~ # The inventory unit model class.
-                controller: Sylius\Bundle\ResourceBundle\Controller\ResourceController
+            inventory_unit:
+                model: Sylius\Component\Inventory\Model\InventoryUnit
+                controller: Sylius\Bundle\InventoryBundle\Controller\InventoryUnitController
                 repository: ~ # You can override the repository class here.
             stockable:
                 model: ~ # The stockable model class.
                 controller: Sylius\Bundle\ResourceBundle\Controller\ResourceController
-                repository: ~ # You can override the repository class here.
-        checker: sylius_inventory.checker.default # The availability checker service id.
-        operator: sylius_inventory.operator.default # The inventory operator service id.
 
 `phpspec2 <http://phpspec.net>`_ examples
 -----------------------------------------
