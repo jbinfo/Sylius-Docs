@@ -67,8 +67,8 @@ You need use the following syntax *expr:resource.my_expression*.
 
 .. note::
 
-    * `service`: returns a given service (see the example above);
-    * `parameter`: returns a specific parameter value, aka: `expr:parameter("sylius.locale")`
+    * ``service``: returns a given service (see the example above);
+    * ``parameter``: returns a specific parameter value, aka: ``expr:parameter("sylius.locale")``
 
 Event Dispatcher
 ================
